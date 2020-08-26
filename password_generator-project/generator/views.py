@@ -9,8 +9,10 @@ def home(request):
     return render(request, 'generator/home.html', {'password': 'udi2192'})   # render vai direto para PROJECT_NAME/APP_NAME/templates
 
 def password(request):
-    characters = list('abcdefghijklmnopqrstuvwxyz')
+    characters = []
 
+    if request.GET.get('letraMinuscula'):
+        characters.extend(list('abcdefghijklmnopqrstuvwxyz'))
     if request.GET.get('letraMaiuscula'):
         characters.extend(list('ABCDEFGHIJKLMNOPQRSTUVWXYZ'))
     if request.GET.get('numeros'):
@@ -21,6 +23,8 @@ def password(request):
     length = int(request.GET.get('comprimento', 10))  # default value = 10
     thepassword = ''
 
+    if len(characters) == 0:
+        return render(request, 'generator/passworderror.html')
     for eachChar in range(length):
         thepassword += random.choice(characters)
 

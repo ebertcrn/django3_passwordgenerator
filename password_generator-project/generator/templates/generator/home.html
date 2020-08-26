@@ -2,11 +2,14 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Generator</title>
+    <title>PW Generator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
     <div class="container text-center">
+        <nav>
+            <a href="{% url 'about' %}">Sobre</a>
+        </nav>
         <h1>Password Generator by Ebert</h1>
         <form action="{% url 'password' %}"> <!-- ao clicar submit, vai para a url referenciada pelo nome 'password' em urls.py-->
             <select name="comprimento">
@@ -26,13 +29,13 @@
             <br>
             <input type="checkbox" name="letraMaiuscula"> Letra Maiúscula
             <br>
+            <input type="checkbox" name="letraMinuscula"> Letra Minúscula
+            <br>
             <input type="checkbox" name="numeros"> Números
             <br>
             <input type="checkbox" name="caracteresEspeciais"> Caracteres Especiais
             <br>
             <input type="submit" value="Gerar senha" class="btn btn-primary">
-            <br>
-            <a href="{% url 'about' %}">Sobre</a>
         </form>
     </div>
 </body>
