@@ -23,7 +23,7 @@ def password(request):
     length = int(request.GET.get('comprimento', 10))  # default value = 10
     thepassword = ''
 
-    if len(characters) == 0:
+    if not len(characters):
         return render(request, 'generator/passworderror.html')
     for eachChar in range(length):
         thepassword += random.choice(characters)
