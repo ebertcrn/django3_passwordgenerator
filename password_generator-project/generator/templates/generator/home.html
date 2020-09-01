@@ -8,34 +8,37 @@
 <body>
     <div class="container text-center">
         <nav>
-            <a href="{% url 'about' %}">Sobre</a>
+            <a href="{% url 'about' %}">About</a>
         </nav>
         <h1>Password Generator by Ebert</h1>
         <form action="{% url 'password' %}"> <!-- ao clicar submit, vai para a url referenciada pelo nome 'password' em urls.py-->
-            <select name="comprimento">
-                <option value="6">6 caracteres</option>
-                <option value="7">7 caracteres</option>
-                <option value="8">8 caracteres</option>
-                <option value="9">9 caracteres</option>
-                <option value="10" selected="selected">10 caracteres</option>
-                <option value="11">11 caracteres</option>
-                <option value="12">12 caracteres</option>
-                <option value="13">13 caracteres</option>
-                <option value="14">14 caracteres</option>
-                <option value="15">15 caracteres</option>
-                <option value="16">16 caracteres</option>
-                <option value="17">17 caracteres</option>
-            </select> Tamanho
+            <select name="length">
+                <option value="6">6 length</option>
+                <option value="7">7 length</option>
+                <option value="8">8 length</option>
+                <option value="9">9 length</option>
+                <option value="10" selected="selected">10 length</option>
+                <option value="11">11 length</option>
+                <option value="12">12 length</option>
+                <option value="13">13 length</option>
+                <option value="14">14 length</option>
+                <option value="15">15 length</option>
+                <option value="16">16 length</option>
+                <option value="17">17 length</option>
+                <option value="18">18 length</option>
+                <option value="19">19 length</option>
+                <option value="20">20 length</option>
+            </select> Length
             <br>
-            <input type="checkbox" name="letraMaiuscula"> Letra Maiúscula
+            <input type="checkbox" name="uppercase"> Uppercase
             <br>
-            <input type="checkbox" name="letraMinuscula"> Letra Minúscula
+            <input type="checkbox" name="lowercase"> Lowercase
             <br>
-            <input type="checkbox" name="numeros"> Números
+            <input type="checkbox" name="numbers"> Numbers
             <br>
-            <input type="checkbox" name="caracteresEspeciais"> Caracteres Especiais
+            <input type="checkbox" name="specialchars"> Special Characters
             <br>
-            <input type="submit" value="Gerar senha" class="btn btn-primary">
+            <input type="submit" value="Submit" class="btn btn-primary">
         </form>
     </div>
 </body>
